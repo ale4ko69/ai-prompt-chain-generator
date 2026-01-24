@@ -131,6 +131,10 @@ new-project-ai-prompts/
 {output_folder} = .results
 {final_output_file} = .github/copilot-instructions.md
 {project_folders} = ["~/my-project"]  # Single project - REPLACE with your path!
+# Examples:
+#   ["."] - current directory (if running from project root)
+#   ["~/projects/app"] - absolute path
+#   ["../other-project"] - relative path
 # OR
 {project_folders} = ["~/project-a", "~/project-b"]  # Multi-project - REPLACE with your paths!
 {shared_docs_path} = ~/.shared-docs  # For multi-project only
