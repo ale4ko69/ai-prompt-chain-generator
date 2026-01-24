@@ -122,8 +122,12 @@ new-project-ai-prompts/
 ### Main Prompt (Copy & Paste to AI Agent)
 
 > **⚠️ IMPORTANT:** Edit these values BEFORE running the prompt:
+> - **Choose ONE scenario:** Keep only single-project OR multi-project line (delete the other)
 > - Replace `["~/my-project"]` with your actual project path
-> - OR replace `["~/project-a", "~/project-b"]` with your actual project paths (for multi-project)
+>   - For current directory: `["."]`
+>   - For absolute path: `["~/projects/app"]` or `["D:/MyProjects/app"]`
+>   - For relative path: `["../other-project"]`
+> - For multi-project: Replace `["~/project-a", "~/project-b"]` with your actual project paths
 > - Adjust `{output_folder}` if needed (default: `.results`)
 > - Set `{shared_docs_path}` for multi-project setups
 
@@ -131,10 +135,6 @@ new-project-ai-prompts/
 {output_folder} = .results
 {final_output_file} = .github/copilot-instructions.md
 {project_folders} = ["~/my-project"]  # Single project - REPLACE with your path!
-# Examples:
-#   ["."] - current directory (if running from project root)
-#   ["~/projects/app"] - absolute path
-#   ["../other-project"] - relative path
 # OR
 {project_folders} = ["~/project-a", "~/project-b"]  # Multi-project - REPLACE with your paths!
 {shared_docs_path} = ~/.shared-docs  # For multi-project only
