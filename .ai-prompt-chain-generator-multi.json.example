@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "generator": "AI Prompt Chain Generator",
+  "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+  "generatedAt": "2026-01-24T10:30:00Z",
+  "projectMode": "multi",
+  "configuration": {
+    "outputFolder": ".results",
+    "finalOutputFile": ".github/copilot-instructions.md",
+    "projectFolders": ["~/project-a", "~/project-b"],
+    "sharedDocsPath": "~/.shared-docs"
+  },
+  "components": {
+    "steps": [
+      "0-detect-setup",
+      "1-determine-techstack",
+      "2-categorize-files",
+      "3-identify-architecture",
+      "4-domain-deep-dive",
+      "5-styleguide-generation",
+      "6-dependency-audit",
+      "7-build-instructions"
+    ],
+    "templates": {
+      "base": ["universal-rules", "spec-driven-development"],
+      "language": "nodejs-patterns",
+      "multiProject": ["sync-workflow", "adaptation-patterns", "sync-status-tracker"]
+    }
+  },
+  "projects": [
+    {
+      "name": "project-a",
+      "path": "~/project-a",
+      "language": "Node.js/TypeScript",
+      "framework": "React + Express",
+      "instructionsFile": "~/project-a/.github/copilot-instructions.md"
+    },
+    {
+      "name": "project-b",
+      "path": "~/project-b",
+      "language": "Node.js/TypeScript",
+      "framework": "Next.js",
+      "instructionsFile": "~/project-b/.github/copilot-instructions.md"
+    }
+  ],
+  "sharedDocsPath": "~/.shared-docs",
+  "techStack": {
+    "primaryLanguage": "Node.js/TypeScript",
+    "sharedPackages": ["@types/node", "typescript", "eslint"],
+    "packageManager": "npm"
+  },
+  "lastUpdatedBy": "AI Prompt Chain Generator v0.2.0",
+  "customModifications": false,
+  "notes": "Track local changes in this field if you customize the generated instructions"
+}

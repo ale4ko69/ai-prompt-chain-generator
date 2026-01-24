@@ -539,6 +539,89 @@ const [data, setData] = useState([]);
 
 ---
 
+## 🔄 Version Management & Updates
+
+### Check for Updates (Periodic)
+
+**When to Check:**
+- At the start of a new work session (once per day)
+- When user mentions update/upgrade
+- If you notice instructions seem outdated
+
+**Process:**
+
+1. **Read Local Version File:**
+   ```
+   Check if file exists: .ai-prompt-chain-generator.json
+   OR for multi-project: ~/.shared-docs/.ai-prompt-chain-generator.json
+   ```
+
+2. **Extract Current Version:**
+   ```json
+   {
+     "version": "0.2.0",
+     "generatedAt": "2026-01-24T10:30:00Z",
+     "customModifications": false
+   }
+   ```
+
+3. **Check GitHub for Latest:**
+   ```
+   Repository: https://github.com/ale4ko69/new-project-ai-prompts
+   Check: Latest release version
+   Compare with local version
+   ```
+
+4. **If New Version Available:**
+   ```
+   🆕 Update Available!
+
+   Current version: {local_version}
+   Latest version: {github_version}
+   Released: {release_date}
+
+   What's new:
+   {List new features from GitHub release notes}
+
+   ⚠️ IMPORTANT: You have customizations in your instructions!
+
+   To safely update while preserving your changes:
+   📖 Follow: https://github.com/ale4ko69/new-project-ai-prompts/blob/main/UPDATE-INSTRUCTIONS.md
+
+   Would you like me to explain the update process?
+   ```
+
+5. **If Customizations Detected:**
+   ```
+   Check: "customModifications": true in version file
+
+   Warning: Do NOT regenerate instructions automatically
+   Reason: User has custom rules that would be lost
+   Action: Direct to UPDATE-INSTRUCTIONS.md
+   ```
+
+6. **If No Customizations:**
+   ```
+   Offer: "Would you like me to regenerate with the latest templates?"
+
+   If YES:
+   - Create backup of current instructions
+   - Run prompt chain with latest version
+   - Update version file
+   ```
+
+### Version Check Frequency
+- **Automatic:** Once per day (start of session)
+- **Manual:** When user asks "any updates?" or "check for updates"
+- **Never:** Don't spam user with daily messages if already notified
+
+### Version File Maintenance
+- **After Manual Edits:** Set `customModifications: true`
+- **After Regeneration:** Set `customModifications: false`, update `generatedAt`
+- **Track Changes:** Use `notes` field for custom modification descriptions
+
+---
+
 **Template Version:** 1.0
-**Last Updated:** 2026-01-21
+**Last Updated:** 2026-01-24
 **For:** ALL projects (single or multi)

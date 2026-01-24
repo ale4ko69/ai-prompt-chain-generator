@@ -233,12 +233,90 @@ Write to: {project_1}/.github/copilot-instructions.md
 Write to: {project_2}/.github/copilot-instructions.md
 ```
 
-### 8. Verification
+### 8. Create Version Tracking File
+
+Create `.ai-prompt-chain-generator.json` to track the version and configuration:
+
+**Single-Project:**
+```bash
+Write to: {workspace_root}/.ai-prompt-chain-generator.json
+```
+
+**Multi-Project:**
+```bash
+Write to: ~/.shared-docs/.ai-prompt-chain-generator.json
+Write to: {project_1}/.ai-prompt-chain-generator.json
+Write to: {project_2}/.ai-prompt-chain-generator.json
+```
+
+**JSON Structure:**
+
+```json
+{
+  "version": "0.2.0",
+  "generator": "AI Prompt Chain Generator",
+  "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+  "generatedAt": "{ISO 8601 timestamp}",
+  "projectMode": "single",
+  "configuration": {
+    "outputFolder": "{output_folder}",
+    "finalOutputFile": "{final_output_file}",
+    "projectFolders": ["{project_folders}"]
+  },
+  "components": {
+    "steps": ["0-detect-setup", "1-determine-techstack", "2-categorize-files", "3-identify-architecture", "4-domain-deep-dive", "5-styleguide-generation", "6-dependency-audit", "7-build-instructions"],
+    "templates": {
+      "base": ["universal-rules", "spec-driven-development"],
+      "language": "{detected_language}-patterns",
+      "multiProject": []
+    }
+  },
+  "techStack": {
+    "primaryLanguage": "{from Step 1}",
+    "framework": "{from Step 1}",
+    "packageManager": "{from Step 1}"
+  },
+  "lastUpdatedBy": "AI Prompt Chain Generator v0.2.0",
+  "customModifications": false,
+  "notes": "Track local changes in this field if you customize the generated instructions"
+}
+```
+
+**For Multi-Project, add:**
+```json
+{
+  "projectMode": "multi",
+  "projects": [
+    {
+      "name": "{project_1_name}",
+      "path": "{project_1}",
+      "language": "{language}",
+      "instructionsFile": "{project_1}/.github/copilot-instructions.md"
+    },
+    {
+      "name": "{project_2_name}",
+      "path": "{project_2}",
+      "language": "{language}",
+      "instructionsFile": "{project_2}/.github/copilot-instructions.md"
+    }
+  ],
+  "sharedDocsPath": "{shared_docs_path}"
+}
+```
+
+**Important Notes:**
+- This file helps track which version of PCG generated the instructions
+- Enables automatic update detection in future versions
+- Set `customModifications: true` if user manually edits generated instructions
+- Do NOT commit this file if it contains sensitive paths
+
+### 9. Verification
 
 After writing, verify:
 
 ```
 ✅ File(s) created successfully
+✅ Version tracking file (.ai-prompt-chain-generator.json) created
 ✅ No syntax errors (valid Markdown)
 ✅ All sections included
 ✅ Code examples properly formatted
@@ -246,7 +324,7 @@ After writing, verify:
 ✅ Backup created if file existed
 ```
 
-### 9. Summary Report
+### 10. Summary Report
 
 Generate summary:
 

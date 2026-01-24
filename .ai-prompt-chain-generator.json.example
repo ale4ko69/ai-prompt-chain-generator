@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "generator": "AI Prompt Chain Generator",
+  "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+  "generatedAt": "2026-01-24T10:30:00Z",
+  "projectMode": "single",
+  "configuration": {
+    "outputFolder": ".results",
+    "finalOutputFile": ".github/copilot-instructions.md",
+    "projectFolders": ["~/my-project"]
+  },
+  "components": {
+    "steps": [
+      "0-detect-setup",
+      "1-determine-techstack",
+      "2-categorize-files",
+      "3-identify-architecture",
+      "4-domain-deep-dive",
+      "5-styleguide-generation",
+      "6-dependency-audit",
+      "7-build-instructions"
+    ],
+    "templates": {
+      "base": ["universal-rules", "spec-driven-development"],
+      "language": "nodejs-patterns",
+      "multiProject": []
+    }
+  },
+  "techStack": {
+    "primaryLanguage": "Node.js/TypeScript",
+    "framework": "Express.js",
+    "packageManager": "npm"
+  },
+  "lastUpdatedBy": "AI Prompt Chain Generator v0.2.0",
+  "customModifications": false,
+  "notes": "Track local changes in this field if you customize the generated instructions"
+}

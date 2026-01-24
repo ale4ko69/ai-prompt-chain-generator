@@ -16,10 +16,7 @@
 
 - [Purpose](#purpose)
 - [Current Structure](#current-structure)
-- [Templates Overview](#templates-overview)
-  - [BASE Templates (Universal)](#base-templates-universal)
-  - [Multi-Project Templates](#multi-project-templates)
-  - [Spec Templates](#spec-templates)
+- [Templates](TEMPLATES.md) 📄
 - [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Formula](#formula)
@@ -77,73 +74,7 @@ new-project-ai-prompts/
 │       └── cross-project-spec.md     ← Multi-project sync template
 ```
 
----
-
-## Templates Overview
-
-### BASE Templates (Universal)
-
-**`universal-rules.md`** (~500 lines)
-- Language & Communication (English responses, English code)
-- UI/UX Policy (ALWAYS discuss before implementation)
-- Using Existing Code (NEVER invent APIs)
-- Decision Making (USER DECIDES, AI EXECUTES)
-- File Organization (`.results/` for docs)
-- Terminal Best Practices
-- Deletion Policy
-- Error Handling Pattern
-- Clean Code Principles
-- Code Style (double quotes, English comments)
-- Task Complexity Categories
-
-**`spec-driven-development.md`** (~400 lines)
-- When to use specs (4+ files, architecture changes)
-- Spec workflow (Create → Approve → Implement → Archive)
-- Full spec template with TODO lists
-- Progress reporting examples
-- Change Log format
-- Daily summaries
-
----
-
-### Multi-Project Templates
-
-**`sync-workflow.md`** (~300 lines)
-- USER DECIDES, AI EXECUTES principle
-- 6-step sync process (Read → Map → Approve → Implement → Update)
-- File Mapping Table template
-- COPY/ADAPT/SKIP actions
-- Confidence levels (🟢🟡🔴)
-
-**`adaptation-patterns.md`** (~250 lines)
-- Pattern documentation template
-- Quick reference table
-- Detection decision tree
-- Confidence level guidelines
-- Common pitfalls catalog
-
-**`sync-status-tracker.md`** (~150 lines)
-- Active/Planned/Completed sync tables
-- Feature detail sections
-- Complexity levels (Low/Medium/High)
-- Progress tracking format
-
----
-
-### Spec Templates
-
-**`feature-spec-single.md`** (~150 lines)
-- Overview, Requirements, Technical Design
-- TODO List, Acceptance Criteria
-- Change Log with daily summaries
-- For single-project features
-
-**`cross-project-spec.md`** (~250 lines)
-- Project mapping
-- File Mapping Table (COPY/ADAPT/SKIP)
-- Source → Target adaptations
-- Dependency verification
-- For cross-project sync operations
+📖 **For detailed templates documentation, see [TEMPLATES.md](TEMPLATES.md)**
 
 ---
 
@@ -229,7 +160,10 @@ Stop ONLY when:
 
 📖 **Follow our safe migration guide:** [UPDATE-INSTRUCTIONS.md](UPDATE-INSTRUCTIONS.md)
 
+**🚀 First-time updating from pre-0.2.0?** Start with the "First-Time Update" section to enable automatic update detection.
+
 **The migration guide covers:**
+- ✅ First-time setup: Enable auto-update detection (for pre-0.2.0 projects)
 - ✅ Automatic backup creation
 - ✅ Preserving your custom rules and modifications
 - ✅ Safely merging new template improvements
@@ -239,7 +173,7 @@ Stop ONLY when:
 
 **Why use the migration guide?**
 - Prevents accidental overwrites of your customized instructions
-- Ensures smooth integration of new features (e.g., Step 6 dependency audit)
+- Ensures smooth integration of new features (e.g., Step 6 dependency audit, auto-update detection)
 - Maintains project-specific rules you've added
 - Provides rollback if something goes wrong
 
@@ -257,8 +191,13 @@ Step 0: Detect single-project setup
 Steps 1-5: Analyze project (tech stack, architecture, domain, style)
 Step 6: Audit dependencies (security, outdated packages)
 Step 7: Combine BASE templates + analysis → .github/copilot-instructions.md
+        + Generate .ai-prompt-chain-generator.json (version tracking)
 
 Backup: If file exists → .github/copilot-instructions.backup-YYYY-MM-DD-HHmmss.md
+
+AI Assistant: Automatically checks for updates once per day
+              Notifies if new version available
+              Directs to UPDATE-INSTRUCTIONS.md if customizations detected
 ```
 
 ---
@@ -284,11 +223,19 @@ Step 7: Create project-specific instructions
     → Links to ~/.shared-docs/
     → Project-specific overrides (from analysis)
     → Dependency maintenance schedule
+  project1/.ai-prompt-chain-generator.json (version tracking)
 
   project2/.github/copilot-instructions.md
     → Links to ~/.shared-docs/
     → Project-specific overrides (from analysis)
     → Dependency maintenance schedule
+  project2/.ai-prompt-chain-generator.json (version tracking)
+
+  ~/.shared-docs/.ai-prompt-chain-generator.json (global version tracking)
+
+AI Assistant: Checks version files for each project
+              Notifies about updates individually per project
+              Safe migration for customized projects
 ```
 
 ---
@@ -335,6 +282,7 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 10. ✅ **Spec-Driven Development** - Feature specs with TODO tracking
 11. ✅ **Automated Sync Workflow** - File mapping with confidence levels
 12. ✅ **Monorepo Support** - Multi-workspace dependency management
+13. ✅ **Version Tracking** - Auto-detects updates, preserves customizations, safe migration workflow
 
 ---
 
@@ -352,30 +300,7 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 - [x] Added dependency audit step (security, outdated packages, monorepo support)
 - [x] Documented template structure
 
-### 🚧 In Progress
 
-- [ ] Test on real projects
-- [ ] Validate multi-project workflow
-- [ ] Refine based on user feedback
-
-### ⏳ Planned
-
-- [ ] Write usage examples and tutorials
-- [ ] Document real-world use cases
-- [ ] Blog post / comprehensive documentation
-- [ ] Community contributions and feedback
-
----
-
-## Documentation
-
-- **chains/** - 8-step prompt chain for automated analysis (0-7)
-  - Step 6: Dependency audit with security & health checks
-- **templates/base/** - Universal rules + language-specific patterns
-- **templates/multi-project/** - Cross-project sync workflows
-- **templates/specs/** - Feature specification templates
-
----
 
 ## Prerequisites
 
