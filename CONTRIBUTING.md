@@ -53,7 +53,7 @@ This project and everyone participating in it is governed by our commitment to c
 Found a bug? Help us fix it!
 
 **Before submitting a bug report:**
-- Check the [Issues](https://github.com/ale4ko69/new-project-ai-prompts/issues) to see if it's already reported
+- Check the [Issues](https://github.com/ale4ko69/ai-prompt-chain-generator/issues) to see if it's already reported
 - Test with the latest version from `main` branch
 - Gather information about the bug
 
@@ -94,7 +94,7 @@ Found a bug? Help us fix it!
 Have an idea to improve the project? We'd love to hear it!
 
 **Before suggesting:**
-- Check existing [Issues](https://github.com/ale4ko69/new-project-ai-prompts/issues) and [Discussions](https://github.com/ale4ko69/new-project-ai-prompts/discussions)
+- Check existing [Issues](https://github.com/ale4ko69/ai-prompt-chain-generator/issues) and [Discussions](https://github.com/ale4ko69/ai-prompt-chain-generator/discussions)
 - Consider if it fits the project's scope
 - Think about how it benefits other users
 
@@ -213,8 +213,8 @@ Test on multiple project types:
 
 2. **Clone your fork**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/new-project-ai-prompts.git
-   cd new-project-ai-prompts
+   git clone https://github.com/YOUR-USERNAME/ai-prompt-chain-generator.git
+   cd ai-prompt-chain-generator
    ```
 
 3. **Create a branch**
@@ -434,7 +434,7 @@ and error handling with Result/Option types.
 Understanding the structure helps you contribute effectively:
 
 ```
-new-project-ai-prompts/
+ai-prompt-chain-generator/
 ├── README.md                    # Main documentation
 ├── CONTRIBUTING.md              # This file
 ├── LICENSE                      # MIT License
@@ -480,9 +480,9 @@ new-project-ai-prompts/
 
 ## Questions?
 
-- **General questions:** [Discussions](https://github.com/ale4ko69/new-project-ai-prompts/discussions)
-- **Bug reports:** [Issues](https://github.com/ale4ko69/new-project-ai-prompts/issues)
-- **Feature requests:** [Issues](https://github.com/ale4ko69/new-project-ai-prompts/issues) with `enhancement` label
+- **General questions:** [Discussions](https://github.com/ale4ko69/ai-prompt-chain-generator/discussions)
+- **Bug reports:** [Issues](https://github.com/ale4ko69/ai-prompt-chain-generator/issues)
+- **Feature requests:** [Issues](https://github.com/ale4ko69/ai-prompt-chain-generator/issues) with `enhancement` label
 
 ---
 

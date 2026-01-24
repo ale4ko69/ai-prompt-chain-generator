@@ -1,12 +1,12 @@
 # Update Existing Project Instructions
 
-**Purpose:** Safely update project instructions when new-project-ai-prompts has been updated on GitHub, while preserving your local customizations.
+**Purpose:** Safely update project instructions when ai-prompt-chain-generator has been updated on GitHub, while preserving your local customizations.
 
 **Use Case:**
 - You've already generated `.github/copilot-instructions.md`
 - You've added custom rules or modified content
 - You have analysis files in `.results/`
-- New version of new-project-ai-prompts is available on GitHub
+- New version of ai-prompt-chain-generator is available on GitHub
 - You want to merge updates WITHOUT losing your customizations
 
 ---
@@ -23,7 +23,7 @@ I'm using AI Prompt Chain Generator and want to enable automatic update detectio
 Please help me:
 
 1. Read the latest version management section:
-   https://github.com/ale4ko69/new-project-ai-prompts/blob/main/templates/base/universal-rules.md
+   https://github.com/ale4ko69/ai-prompt-chain-generator/blob/main/templates/base/universal-rules.md
    (Find section: "🔄 Version Management & Updates")
 
 2. Add this entire section to my .github/copilot-instructions.md
@@ -35,7 +35,7 @@ Please help me:
    {
      "version": "0.1.0",
      "generator": "AI Prompt Chain Generator",
-     "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+     "repository": "https://github.com/ale4ko69/ai-prompt-chain-generator",
      "generatedAt": "{current_generation_date}",
      "projectMode": "single",
      "customModifications": true,
@@ -77,7 +77,7 @@ This process will:
 {instructions_file} = .github/copilot-instructions.md
 {results_folder} = .results
 {backup_folder} = .results/backups
-{github_repo} = https://github.com/ale4ko69/new-project-ai-prompts
+{github_repo} = https://github.com/ale4ko69/ai-prompt-chain-generator
 ```
 
 ---
@@ -122,7 +122,7 @@ grep "Version:" .github/copilot-instructions.md
 
 Project: {project_name}
 Last generated: 2026-01-20
-Generated with: new-project-ai-prompts v0.1.0 (6 steps: 0-5)
+Generated with: ai-prompt-chain-generator v0.1.0 (6 steps: 0-5)
 
 Files found:
 - .results/0-detect-setup.md ✅
@@ -148,7 +148,7 @@ Customizations detected:
 **Windows (PowerShell):**
 ```powershell
 # Fetch latest README
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ale4ko69/new-project-ai-prompts/main/README.md" -OutFile "temp-readme.md"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ale4ko69/ai-prompt-chain-generator/main/README.md" -OutFile "temp-readme.md"
 
 # Extract version
 Select-String -Path "temp-readme.md" -Pattern "Version:"
@@ -157,7 +157,7 @@ Select-String -Path "temp-readme.md" -Pattern "Version:"
 **Unix/Linux/macOS (Bash):**
 ```bash
 # Fetch latest README
-curl https://raw.githubusercontent.com/ale4ko69/new-project-ai-prompts/main/README.md
+curl https://raw.githubusercontent.com/ale4ko69/ai-prompt-chain-generator/main/README.md
 
 # Extract version
 grep "Version:" README.md

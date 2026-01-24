@@ -44,7 +44,7 @@ Automated prompt chain system for generating project-specific AI instructions:
 ## Current Structure
 
 ```
-new-project-ai-prompts/
+ai-prompt-chain-generator/
 ├── README.md                         ← This file
 ├── chains/                           ← ✅ COMPLETED
 │   ├── 0-detect-setup.md             ← Detect single/multi-project
@@ -107,7 +107,7 @@ Use this when generating AI instructions for your project for the first time.
 You are assisting with generating AI coding instructions using a multi-step prompt chain.
 
 1. Read all prompt files from GitHub:
-   https://github.com/ale4ko69/new-project-ai-prompts/tree/main/chains/
+   https://github.com/ale4ko69/ai-prompt-chain-generator/tree/main/chains/
 
 2. Review all prompt files (0-7) in the chains/ folder.
 
@@ -372,7 +372,7 @@ SOFTWARE.
 **ale4ko69** - Initial work and maintenance
 
 - GitHub: [@ale4ko69](https://github.com/ale4ko69)
-- Repository: [new-project-ai-prompts](https://github.com/ale4ko69/new-project-ai-prompts)
+- Repository: [ai-prompt-chain-generator](https://github.com/ale4ko69/ai-prompt-chain-generator)
 
 ---
 
@@ -387,8 +387,8 @@ SOFTWARE.
 ## Support
 
 - 📖 [Documentation](README.md)
-- 🐛 [Issues](https://github.com/ale4ko69/new-project-ai-prompts/issues)
-- 💬 [Discussions](https://github.com/ale4ko69/new-project-ai-prompts/discussions)
+- 🐛 [Issues](https://github.com/ale4ko69/ai-prompt-chain-generator/issues)
+- 💬 [Discussions](https://github.com/ale4ko69/ai-prompt-chain-generator/discussions)
 
 ---
 

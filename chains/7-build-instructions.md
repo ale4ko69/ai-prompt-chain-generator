@@ -255,7 +255,7 @@ Write to: {project_2}/.ai-prompt-chain-generator.json
 {
   "version": "0.2.0",
   "generator": "AI Prompt Chain Generator",
-  "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+  "repository": "https://github.com/ale4ko69/ai-prompt-chain-generator",
   "generatedAt": "{ISO 8601 timestamp}",
   "projectMode": "single",
   "configuration": {

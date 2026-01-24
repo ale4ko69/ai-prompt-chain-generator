@@ -567,7 +567,7 @@ const [data, setData] = useState([]);
 
 3. **Check GitHub for Latest:**
    ```
-   Repository: https://github.com/ale4ko69/new-project-ai-prompts
+   Repository: https://github.com/ale4ko69/ai-prompt-chain-generator
    Check: Latest release version
    Compare with local version
    ```
@@ -586,7 +586,7 @@ const [data, setData] = useState([]);
    ⚠️ IMPORTANT: You have customizations in your instructions!
 
    To safely update while preserving your changes:
-   📖 Follow: https://github.com/ale4ko69/new-project-ai-prompts/blob/main/UPDATE-INSTRUCTIONS.md
+   📖 Follow: https://github.com/ale4ko69/ai-prompt-chain-generator/blob/main/UPDATE-INSTRUCTIONS.md
 
    Would you like me to explain the update process?
    ```

@@ -237,7 +237,7 @@ Auto-generated version tracking file:
 {
   "version": "0.2.0",
   "generator": "AI Prompt Chain Generator",
-  "repository": "https://github.com/ale4ko69/new-project-ai-prompts",
+  "repository": "https://github.com/ale4ko69/ai-prompt-chain-generator",
   "generatedAt": "2026-01-24T10:30:00Z",
   "projectMode": "single",
   "configuration": {
