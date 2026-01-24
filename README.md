@@ -149,7 +149,11 @@ new-project-ai-prompts/
 
 ## Usage
 
-### Main Prompt (Copy & Paste to AI Agent)
+### 🆕 For New Projects (First Time Use)
+
+Use this when generating AI instructions for your project for the first time.
+
+**Main Prompt (Copy & Paste to AI Agent)**
 
 > **⚠️ IMPORTANT:** Edit these values BEFORE running the prompt:
 > - **Choose ONE scenario:** Keep only single-project OR multi-project line (delete the other)
@@ -214,6 +218,31 @@ Stop ONLY when:
 - Full {final_output_file} is generated
 - User is notified of completion
 ```
+
+---
+
+### 🔄 For Updating Existing Projects
+
+**If you're already using AI Prompt Chain Generator and want to update to the latest version:**
+
+**⚠️ CRITICAL:** Do NOT re-run the main prompt above! You'll lose all your customizations.
+
+📖 **Follow our safe migration guide:** [UPDATE-INSTRUCTIONS.md](UPDATE-INSTRUCTIONS.md)
+
+**The migration guide covers:**
+- ✅ Automatic backup creation
+- ✅ Preserving your custom rules and modifications
+- ✅ Safely merging new template improvements
+- ✅ Handling file renames (Step 6 → Step 7)
+- ✅ Version tracking and rollback instructions
+- ✅ Cross-platform support (Windows & Unix/Linux/macOS)
+
+**Why use the migration guide?**
+- Prevents accidental overwrites of your customized instructions
+- Ensures smooth integration of new features (e.g., Step 6 dependency audit)
+- Maintains project-specific rules you've added
+- Provides rollback if something goes wrong
+
 
 ---
 
