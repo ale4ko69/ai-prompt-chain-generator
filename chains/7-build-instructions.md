@@ -1,6 +1,6 @@
-# Step 6: Build Final Instructions
+# Step 7: Build Final Instructions
 
-**Purpose:** Combine all analyzed data from Steps 0-5 with base templates to generate the final instruction file.
+**Purpose:** Combine all analyzed data from Steps 0-6 with base templates to generate the final instruction file.
 
 **Parameters:**
 - `{output_folder}` - Where analysis results are stored (e.g., `.results/`)
@@ -8,7 +8,7 @@
 - `{workspace_root}` - Root directory of the workspace
 
 **Dependencies:**
-- ALL previous steps (0-5) must be completed
+- ALL previous steps (0-6) must be completed
 
 ---
 
@@ -26,6 +26,7 @@ Read files:
 - {output_folder}/3-identify-architecture.md
 - {output_folder}/4-domain-deep-dive.md
 - {output_folder}/5-styleguide-generation.md
+- {output_folder}/6-dependency-audit.md
 ```
 
 Extract key information:
@@ -35,6 +36,7 @@ Extract key information:
 - Architecture pattern
 - Key entities and features
 - Coding style patterns
+- Dependency health status and recommendations
 
 ### 2. Load Base Templates
 
@@ -214,7 +216,8 @@ fi
 10. **Spec-Driven Development:** From templates/base/spec-driven-development.md
 11. **Multi-Project (if applicable):** From templates/multi-project/*
 12. **Development Workflow:** Build, run, test, deploy commands
-13. **Appendix:** Links to key files, resources
+13. **Dependency Maintenance:** From Step 6 (maintenance schedule + current health)
+14. **Appendix:** Links to key files, resources
 
 ### 7. Write Output File(s)
 
@@ -276,6 +279,7 @@ Generate summary:
 - ✅ Step 3: Architecture ({architecture_pattern})
 - ✅ Step 4: Domain ({entity_count} entities, {feature_count} features)
 - ✅ Step 5: Code style (extracted from {sample_size} files)
+- ✅ Step 6: Dependency audit ({critical_count} critical, {recommended_count} recommended updates)
 
 ## Next Steps
 1. Review generated instruction file(s)
@@ -401,6 +405,34 @@ This file provides comprehensive instructions for AI coding assistants working o
 ```bash
 {Test commands}
 ```
+
+---
+
+## Dependency Maintenance
+
+{Content from Step 6: Maintenance Schedule section}
+
+### Regular Checks
+- [ ] **Weekly:** Review security advisories
+- [ ] **Monthly:** Run full dependency audit
+- [ ] **Quarterly:** Major dependency review and planning
+- [ ] **Before major features:** Full dependency scan
+- [ ] **After 3+ months inactivity:** Complete security audit
+
+### Commands for This Stack
+
+{Language-specific commands from Step 6}
+
+### Current Dependency Health
+
+**Last Audit:** {date from Step 6}
+
+{Summary from Step 6 dependency-audit.md:}
+- 🔴 Critical issues: {count}
+- ⚠️ Recommended updates: {count}
+- ℹ️ Optional updates: {count}
+
+**See full report:** `.results/6-dependency-audit.md`
 
 ---
 

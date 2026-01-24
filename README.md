@@ -1,9 +1,38 @@
-# AI Project Prompts
+<div align="center">
+  <img src="assets/logo-pcg-350.png" alt="Prompt Chain Generator Logo" width="350"/>
 
-**Status:** ✅ Ready for Testing
+  # AI Prompt Chain Generator
+
 **Version:** 0.2.0
-**Date:** January 24, 2026
 **License:** MIT
+
+**Date:** January 24, 2026 **Status:** ✅ Ready for Testing
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [Purpose](#purpose)
+- [Current Structure](#current-structure)
+- [Templates Overview](#templates-overview)
+  - [BASE Templates (Universal)](#base-templates-universal)
+  - [Multi-Project Templates](#multi-project-templates)
+  - [Spec Templates](#spec-templates)
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+- [Formula](#formula)
+- [Key Features](#key-features)
+- [Progress Status](#progress-status)
+- [Documentation](#documentation)
+- [Prerequisites](#prerequisites)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+- [Support](#support)
 
 ---
 
@@ -27,7 +56,8 @@ new-project-ai-prompts/
 │   ├── 3-identify-architecture.md    ← Identify patterns (universal)
 │   ├── 4-domain-deep-dive.md         ← Domain analysis (language-agnostic)
 │   ├── 5-styleguide-generation.md    ← Extract code style (descriptive)
-│   └── 6-build-instructions.md       ← Build final instructions
+│   ├── 6-dependency-audit.md         ← Dependency health & security audit
+│   └── 7-build-instructions.md       ← Build final instructions
 ├── templates/                        ← ✅ COMPLETED
 │   ├── base/
 │   │   ├── universal-rules.md        ← Core rules for ALL projects
@@ -144,9 +174,9 @@ You are assisting with generating AI coding instructions using a multi-step prom
 1. Read all prompt files from GitHub:
    https://github.com/ale4ko69/new-project-ai-prompts/tree/main/chains/
 
-2. Review all prompt files (0-6) in the chains/ folder.
+2. Review all prompt files (0-7) in the chains/ folder.
 
-3. Review all prompt files (0-6) WITHOUT executing them.
+3. Review all prompt files (0-7) WITHOUT executing them.
    - This will help you understand the full scope of the prompt chain.
 
 4. Confirm you have a full understanding of the chain sequence.
@@ -158,7 +188,8 @@ You are assisting with generating AI coding instructions using a multi-step prom
    - 3-identify-architecture.md  (Identify patterns)
    - 4-domain-deep-dive.md       (Understand domain logic)
    - 5-styleguide-generation.md  (Extract code style)
-   - 6-build-instructions.md     (Generate final file)
+   - 6-dependency-audit.md       (Check dependency health & security)
+   - 7-build-instructions.md     (Generate final file)
 
 6. For each step, output results to `{output_folder}/`:
    - Example: 1-determine-techstack.md → {output_folder}/1-techstack.md
@@ -178,7 +209,7 @@ You are assisting with generating AI coding instructions using a multi-step prom
    - Notify user about backup creation
 
 Stop ONLY when:
-- All steps (0-6) are complete
+- All steps (0-7) are complete
 - All BASE templates are integrated
 - Full {final_output_file} is generated
 - User is notified of completion
@@ -195,7 +226,8 @@ Input: {project_folder}
 
 Step 0: Detect single-project setup
 Steps 1-5: Analyze project (tech stack, architecture, domain, style)
-Step 6: Combine BASE templates + analysis → .github/copilot-instructions.md
+Step 6: Audit dependencies (security, outdated packages)
+Step 7: Combine BASE templates + analysis → .github/copilot-instructions.md
 
 Backup: If file exists → .github/copilot-instructions.backup-YYYY-MM-DD-HHmmss.md
 ```
@@ -216,15 +248,18 @@ Create shared docs:
   ~/.shared-docs/adaptation-patterns.md (from adaptation-patterns.md)
 
 Steps 1-5: Analyze each project
+Step 6: Audit dependencies for each project
 
-Step 6: Create project-specific instructions
+Step 7: Create project-specific instructions
   project1/.github/copilot-instructions.md
     → Links to ~/.shared-docs/
     → Project-specific overrides (from analysis)
+    → Dependency maintenance schedule
 
   project2/.github/copilot-instructions.md
     → Links to ~/.shared-docs/
     → Project-specific overrides (from analysis)
+    → Dependency maintenance schedule
 ```
 
 ---
@@ -234,7 +269,8 @@ Step 6: Create project-specific instructions
 ### Single Project:
 ```
 BASE universal-rules.md
-  + Chain analysis (steps 1-5)
+  + Chain analysis (steps 1-6)
+  + Dependency health check
   + Project-specific patterns
   ↓
 .github/copilot-instructions.md
@@ -250,6 +286,7 @@ BASE templates → ~/.shared-docs/
 
 Chain analysis (per project) → project/.github/copilot-instructions.md
   ├─ Links to shared docs
+  ├─ Dependency maintenance schedule
   └─ Project-specific overrides
 ```
 
@@ -264,9 +301,11 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 5. ✅ **Cross-Project Commands** - 40+ ready terminal commands
 6. ✅ **File Mapping Tables** - Structured sync decision-making
 7. ✅ **Language Flexibility** - English responses by default (customizable)
-8. ✅ **6-Step Analysis Chain** - Tech stack, architecture, domain, style guide
-9. ✅ **Spec-Driven Development** - Feature specs with TODO tracking
-10. ✅ **Automated Sync Workflow** - File mapping with confidence levels
+8. ✅ **8-Step Analysis Chain** - Tech stack, architecture, domain, style, dependencies
+9. ✅ **Dependency Audit** - Security vulnerabilities, outdated packages, maintenance schedule
+10. ✅ **Spec-Driven Development** - Feature specs with TODO tracking
+11. ✅ **Automated Sync Workflow** - File mapping with confidence levels
+12. ✅ **Monorepo Support** - Multi-workspace dependency management
 
 ---
 
@@ -280,53 +319,29 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 - [x] Created MULTI-PROJECT templates (3 files)
 - [x] Created SPEC templates (2 files)
 - [x] Created LANGUAGE templates (5 files: Node.js, Python, C#, Bash, Generic)
-- [x] Created prompt chains (7 files: steps 0-6)
+- [x] Created prompt chains (8 files: steps 0-7)
+- [x] Added dependency audit step (security, outdated packages, monorepo support)
 - [x] Documented template structure
 
 ### 🚧 In Progress
 
-- [ ] Test on real project (scadafence)
+- [ ] Test on real projects
 - [ ] Validate multi-project workflow
-- [ ] Refine based on test results
+- [ ] Refine based on user feedback
 
 ### ⏳ Planned
 
-- [ ] Create GitHub repository
-- [ ] Write usage examples
-- [ ] Document real-world sync case (SLDAP)
-- [ ] Blog post / documentation
-- [ ] Open source release
-
----
-
-## Next Steps
-
-1. **Test chain execution** ← CURRENT
-   - Run on scadafence project (CI)
-   - Verify generated instructions
-   - Compare with existing .copilot-instructions.md
-   - Test language template selection
-
-2. **Validate multi-project workflow**
-   - Test on scadafence (CI) + sf-multisite (CW)
-   - Verify cross-project sync detection
-   - Test File Mapping Table generation
-
-3. **Document usage**
-   - Create USAGE.md
-   - Add examples
-   - Write CONTRIBUTING.md
-
-4. **Prepare for GitHub**
-   - Choose repository name
-   - Write comprehensive README
-   - Add LICENSE (MIT)
+- [ ] Write usage examples and tutorials
+- [ ] Document real-world use cases
+- [ ] Blog post / comprehensive documentation
+- [ ] Community contributions and feedback
 
 ---
 
 ## Documentation
 
-- **chains/** - 7-step prompt chain for automated analysis
+- **chains/** - 8-step prompt chain for automated analysis (0-7)
+  - Step 6: Dependency audit with security & health checks
 - **templates/base/** - Universal rules + language-specific patterns
 - **templates/multi-project/** - Cross-project sync workflows
 - **templates/specs/** - Feature specification templates
@@ -338,16 +353,6 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 - AI coding assistant (GitHub Copilot, Claude, ChatGPT, etc.)
 - Access to project files you want to analyze
 - Basic understanding of your project's structure
-
----
-
-## Installation
-
-1. Clone or download this repository to `~/.shared-docs/` (recommended) or any location
-2. Optional: Add to `.bashrc` or `.zshrc`:
-   ```bash
-   export AI_PROMPTS_PATH=~/.shared-docs/new-project-ai-prompts
-   ```
 
 ---
 
