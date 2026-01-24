@@ -137,8 +137,8 @@ new-project-ai-prompts/
 
 You are assisting with generating AI coding instructions using a multi-step prompt chain.
 
-1. Read all prompt files from local path:
-   ~/.shared-docs/new-project-ai-prompts/chains/
+1. Read all prompt files from GitHub:
+   https://github.com/ale4ko69/new-project-ai-prompts/tree/main/chains/
 
 2. Review all prompt files (0-6) in the chains/ folder.
 
