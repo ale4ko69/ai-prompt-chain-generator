@@ -28,10 +28,12 @@
 ---
 
 
+
 ## Current Structure
 
+
 ```
-project-root/
+ai-prompt-chain-generator/
 ├── README.md
 ├── chains/
 │   ├── 0-detect-setup.md
@@ -67,13 +69,7 @@ project-root/
 │       └── cross-project-spec.md
 ```
 
-> **Note:** Internal/automation/generator files (e.g., .github/agents/, npap-code-reviewer.agent.md, npap-dev.agent.md, service scripts) are NOT part of the user/project structure and are intentionally excluded from this section. Only files relevant for user workflows, prompt chains, and template adaptation are shown here.
-│   │   ├── adaptation-patterns.md    ← COPY/ADAPT/SKIP patterns
-│   │   └── sync-status-tracker.md    ← Sync progress tracking
-│   └── specs/
-│       ├── feature-spec-single.md    ← Single project feature template
-│       └── cross-project-spec.md     ← Multi-project sync template
-```
+> **Note:** Internal/automation/generator files (e.g., .github/agents/, npap-code-reviewer.agent.md, npap-dev.agent.md, service scripts) are NOT part of the user/project structure and are intentionally excluded from this section. Only files relevant for user workflows, prompt chains, и template adaptation are shown here.
 
 📖 **For detailed templates documentation, see [TEMPLATES.md](TEMPLATES.md)**
 
@@ -84,6 +80,7 @@ project-root/
 ### 🆕 For New Projects (First Time Use)
 
 Use this when generating AI instructions for your project for the first time.
+
 
 **Main Prompt (Copy & Paste to AI Agent)**
 
@@ -108,41 +105,41 @@ Use this when generating AI instructions for your project for the first time.
 You are assisting with generating AI coding instructions using a multi-step prompt chain.
 
 1. Read all prompt files from GitHub:
-   https://github.com/ale4ko69/ai-prompt-chain-generator/tree/main/chains/
+  https://github.com/ale4ko69/ai-prompt-chain-generator/tree/main/chains/
 
 2. Review all prompt files (0-7) in the chains/ folder.
 
 3. Review all prompt files (0-7) WITHOUT executing them.
-   - This will help you understand the full scope of the prompt chain.
+  - This will help you understand the full scope of the prompt chain.
 
 4. Confirm you have a full understanding of the chain sequence.
 
 5. Once familiar with the flow, execute prompts in numerical order:
-   - 0-detect-setup.md          (Detect single vs multi-project)
-   - 1-determine-techstack.md    (Analyze tech stack)
-   - 2-categorize-files.md       (Categorize files by purpose)
-   - 3-identify-architecture.md  (Identify patterns)
-   - 4-domain-deep-dive.md       (Understand domain logic)
-   - 5-styleguide-generation.md  (Extract code style)
-   - 6-dependency-audit.md       (Check dependency health & security)
-   - 7-build-instructions.md     (Generate final file)
+  - 0-detect-setup.md          (Detect single vs multi-project)
+  - 1-determine-techstack.md    (Analyze tech stack)
+  - 2-categorize-files.md       (Categorize files by purpose)
+  - 3-identify-architecture.md  (Identify patterns)
+  - 4-domain-deep-dive.md       (Understand domain logic)
+  - 5-styleguide-generation.md  (Extract code style)
+  - 6-dependency-audit.md       (Check dependency health & security)
+  - 7-build-instructions.md     (Generate final file)
 
 6. For each step, output results to `{output_folder}/`:
-   - Example: 1-determine-techstack.md → {output_folder}/1-techstack.md
+  - Example: 1-determine-techstack.md → {output_folder}/1-techstack.md
 
 7. Use BASE templates from `templates/` folder:
-   - templates/base/universal-rules.md
-   - templates/base/spec-driven-development.md
-   - templates/base/languages/{detected-language}-patterns.md (from Step 1)
-   - templates/multi-project/* (if multi-project detected)
+  - templates/base/universal-rules.md
+  - templates/base/spec-driven-development.md
+  - templates/base/languages/{detected-language}-patterns.md (from Step 1)
+  - templates/multi-project/* (if multi-project detected)
 
 8. Final output location:
-   - Single project: {final_output_file}
-   - Multi-project: {shared_docs_path}/*.md + per-project {final_output_file}
+  - Single project: {final_output_file}
+  - Multi-project: {shared_docs_path}/*.md + per-project {final_output_file}
 
 9. IMPORTANT: If {final_output_file} exists, create backup first:
-   - Backup: {final_output_file}.backup-YYYY-MM-DD-HHmmss.md
-   - Notify user about backup creation
+  - Backup: {final_output_file}.backup-YYYY-MM-DD-HHmmss.md
+  - Notify user about backup creation
 
 Stop ONLY when:
 - All steps (0-7) are complete
@@ -268,44 +265,7 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 
 1. ✅ **Multi-Project Support** - First public example for interconnected projects
 
-```
-project-root/
-├── README.md
-├── chains/
-│   ├── 0-detect-setup.md
-│   ├── 1-determine-techstack.md
-│   ├── 2-categorize-files.md
-│   ├── 3-identify-architecture.md
-│   ├── 4-domain-deep-dive.md
-│   ├── 5-styleguide-generation.md
-│   ├── 6-dependency-audit.md
-│   └── 7-build-instructions.md
-├── templates/
-│   ├── agents/
-│   │   ├── abstract-code-review-agent.md
-│   │   └── abstract-dev-agent.md
-│   ├── base/
-│   │   ├── universal-rules.md
-│   │   ├── spec-driven-development.md
-│   │   ├── universal-agent-checklist.md
-│   │   ├── universal-agent-command-template.md
-│   │   ├── user-command-reference.md
-│   │   └── languages/
-│   │       ├── nodejs-patterns.md
-│   │       ├── python-patterns.md
-│   │       ├── csharp-patterns.md
-│   │       ├── bash-patterns.md
-│   │       └── generic-patterns.md
-│   ├── multi-project/
-│   │   ├── sync-workflow.md
-│   │   ├── adaptation-patterns.md
-│   │   └── sync-status-tracker.md
-│   └── specs/
-│       ├── feature-spec-single.md
-│       └── cross-project-spec.md
-```
 
-> **Note:** Internal/automation/generator files (e.g., .github/agents/, npap-code-reviewer.agent.md, npap-dev.agent.md, service scripts) are NOT part of the user/project structure and are intentionally excluded from this section. Only files relevant for user workflows, prompt chains, and template adaptation are shown here.
 3. ✅ **USER DECIDES Principle** - Explicit approval workflows
 4. ✅ **Critical Rules** - Anti-pattern prevention and NEVER invent APIs policy
 5. ✅ **Cross-Project Commands** - 40+ ready terminal commands
