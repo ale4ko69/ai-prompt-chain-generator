@@ -1,9 +1,6 @@
 <div align="center">
   <img src="assets/logo-pcg-350.png" alt="Prompt Chain Generator Logo" width="350"/>
 
-  # AI Prompt Chain Generator
-
-**Version:** 0.2.0
 **License:** MIT
 
 **Date:** January 24, 2026 **Status:** ✅ Ready for Testing
@@ -15,9 +12,6 @@
 ## 📑 Table of Contents
 
 - [Purpose](#purpose)
-- [Current Structure](#current-structure)
-- [Templates](TEMPLATES.md) 📄
-- [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Formula](#formula)
 - [Key Features](#key-features)
@@ -33,40 +27,47 @@
 
 ---
 
-## Purpose
-
-Automated prompt chain system for generating project-specific AI instructions:
-- **Single projects** - BASE templates + project analysis → `.github/copilot-instructions.md`
-- **Multi-project setups** - Shared docs + cross-project workflows + sync automation
-
----
 
 ## Current Structure
 
 ```
-ai-prompt-chain-generator/
-├── README.md                         ← This file
-├── chains/                           ← ✅ COMPLETED
-│   ├── 0-detect-setup.md             ← Detect single/multi-project
-│   ├── 1-determine-techstack.md      ← Analyze tech stack
-│   ├── 2-categorize-files.md         ← Categorize by purpose (adaptive)
-│   ├── 3-identify-architecture.md    ← Identify patterns (universal)
-│   ├── 4-domain-deep-dive.md         ← Domain analysis (language-agnostic)
-│   ├── 5-styleguide-generation.md    ← Extract code style (descriptive)
-│   ├── 6-dependency-audit.md         ← Dependency health & security audit
-│   └── 7-build-instructions.md       ← Build final instructions
-├── templates/                        ← ✅ COMPLETED
+project-root/
+├── README.md
+├── chains/
+│   ├── 0-detect-setup.md
+│   ├── 1-determine-techstack.md
+│   ├── 2-categorize-files.md
+│   ├── 3-identify-architecture.md
+│   ├── 4-domain-deep-dive.md
+│   ├── 5-styleguide-generation.md
+│   ├── 6-dependency-audit.md
+│   └── 7-build-instructions.md
+├── templates/
+│   ├── agents/
+│   │   ├── abstract-code-review-agent.md
+│   │   └── abstract-dev-agent.md
 │   ├── base/
-│   │   ├── universal-rules.md        ← Core rules for ALL projects
-│   │   ├── spec-driven-development.md ← Feature spec workflow
-│   │   └── languages/                ← Language-specific patterns
-│   │       ├── nodejs-patterns.md    ← Node.js/JavaScript/TypeScript
-│   │       ├── python-patterns.md    ← Python/Flask/Django/FastAPI
-│   │       ├── csharp-patterns.md    ← C#/.NET/ASP.NET Core
-│   │       ├── bash-patterns.md      ← Bash/Shell scripts
-│   │       └── generic-patterns.md   ← Fallback for other languages
+│   │   ├── universal-rules.md
+│   │   ├── spec-driven-development.md
+│   │   ├── universal-agent-checklist.md
+│   │   ├── universal-agent-command-template.md
+│   │   ├── user-command-reference.md
+│   │   └── languages/
+│   │       ├── nodejs-patterns.md
+│   │       ├── python-patterns.md
+│   │       ├── csharp-patterns.md
+│   │       ├── bash-patterns.md
+│   │       └── generic-patterns.md
 │   ├── multi-project/
-│   │   ├── sync-workflow.md          ← Cross-project sync process
+│   │   ├── sync-workflow.md
+│   │   ├── adaptation-patterns.md
+│   │   └── sync-status-tracker.md
+│   └── specs/
+│       ├── feature-spec-single.md
+│       └── cross-project-spec.md
+```
+
+> **Note:** Internal/automation/generator files (e.g., .github/agents/, npap-code-reviewer.agent.md, npap-dev.agent.md, service scripts) are NOT part of the user/project structure and are intentionally excluded from this section. Only files relevant for user workflows, prompt chains, and template adaptation are shown here.
 │   │   ├── adaptation-patterns.md    ← COPY/ADAPT/SKIP patterns
 │   │   └── sync-status-tracker.md    ← Sync progress tracking
 │   └── specs/
@@ -150,8 +151,6 @@ Stop ONLY when:
 - User is notified of completion
 ```
 
----
-
 ### 🔄 For Updating Existing Projects
 
 **If you're already using AI Prompt Chain Generator and want to update to the latest version:**
@@ -177,8 +176,6 @@ Stop ONLY when:
 - Maintains project-specific rules you've added
 - Provides rollback if something goes wrong
 
-
----
 
 ## How It Works
 
@@ -240,7 +237,6 @@ AI Assistant: Checks version files for each project
 
 ---
 
-## Formula
 
 ### Single Project:
 ```
@@ -271,7 +267,45 @@ Chain analysis (per project) → project/.github/copilot-instructions.md
 ## Key Features
 
 1. ✅ **Multi-Project Support** - First public example for interconnected projects
-2. ✅ **COPY vs ADAPT Patterns** - Catalog of cross-project adaptations
+
+```
+project-root/
+├── README.md
+├── chains/
+│   ├── 0-detect-setup.md
+│   ├── 1-determine-techstack.md
+│   ├── 2-categorize-files.md
+│   ├── 3-identify-architecture.md
+│   ├── 4-domain-deep-dive.md
+│   ├── 5-styleguide-generation.md
+│   ├── 6-dependency-audit.md
+│   └── 7-build-instructions.md
+├── templates/
+│   ├── agents/
+│   │   ├── abstract-code-review-agent.md
+│   │   └── abstract-dev-agent.md
+│   ├── base/
+│   │   ├── universal-rules.md
+│   │   ├── spec-driven-development.md
+│   │   ├── universal-agent-checklist.md
+│   │   ├── universal-agent-command-template.md
+│   │   ├── user-command-reference.md
+│   │   └── languages/
+│   │       ├── nodejs-patterns.md
+│   │       ├── python-patterns.md
+│   │       ├── csharp-patterns.md
+│   │       ├── bash-patterns.md
+│   │       └── generic-patterns.md
+│   ├── multi-project/
+│   │   ├── sync-workflow.md
+│   │   ├── adaptation-patterns.md
+│   │   └── sync-status-tracker.md
+│   └── specs/
+│       ├── feature-spec-single.md
+│       └── cross-project-spec.md
+```
+
+> **Note:** Internal/automation/generator files (e.g., .github/agents/, npap-code-reviewer.agent.md, npap-dev.agent.md, service scripts) are NOT part of the user/project structure and are intentionally excluded from this section. Only files relevant for user workflows, prompt chains, and template adaptation are shown here.
 3. ✅ **USER DECIDES Principle** - Explicit approval workflows
 4. ✅ **Critical Rules** - Anti-pattern prevention and NEVER invent APIs policy
 5. ✅ **Cross-Project Commands** - 40+ ready terminal commands

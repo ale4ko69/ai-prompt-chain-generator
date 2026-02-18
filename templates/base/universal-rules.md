@@ -1,6 +1,9 @@
+### Agent Creation & Update Consent
+Before creating or updating project-specific agent files (including during backup or automation), ALWAYS request explicit user consent. Clearly explain the advantages of individualized agents (project adaptation, automation, quality control, transparency, update support). Only proceed after user approval. This rule must be enforced in all automation logic and backup/update workflows.
+
 # Universal Coding Rules (BASE Template)
 
-**Purpose:** Core rules applicable to ALL projects (single or multi)
+**Purpose:** Core rules applicable to ALL projects (single or multi). For the up-to-date list of user commands for all agents (including subagents and chains), see [user-command-reference.md](../base/user-command-reference.md).
 **Used in:** Every `.github/copilot-instructions.md` generated file
 
 ---
@@ -12,10 +15,14 @@
 - **Code Comments:** ALWAYS English
 - **Documentation:** English in code files
 
-### Communication Principles
+- **Deep Adaptation for Agents:** When creating or updating agent prompt files, ALWAYS adapt them to the specific goals, structure, and workflows of the current project. Avoid generic or abstract descriptions—clearly state project purpose, key scenarios, and required tools/skills for the agent. Review project files and documentation before finalizing any agent prompt.
+- **Verify Before Stating:** ALWAYS check the actual content of a file or code before making any claims, conclusions, or recommendations.
 - **Ask First:** If unclear, ALWAYS ask questions before writing code
 - **Focused Answers:** Provide ONLY what was requested (e.g., if asked for jsDoc, don't implement the function)
 - **Study Structure:** ALWAYS study project structure before starting work
+
+### Documentation Review for Document-Centric Projects
+In projects focused on documentation, code reviewers MUST check cross-references between files, consistency of section names, detect duplicate sections, and suggest improvements to text clarity and structure. This is required for all documentation-driven and template-based repositories.
 
 ### Questions to Ask
 - "Where are components for [feature] located?"
